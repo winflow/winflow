@@ -25,46 +25,48 @@
           }
       </style>
   </head>
-  <body>
-   	<header class="jumbotron subhead" id="overview">
-   	  <div class="container">
-        <h1>WinFlow Analytics</h1>
-        <p class="lead">{ Next generation trend indicator which precisely identifies market changes instantly }</p>
-      </div>
+ <body>
+    <header class="jumbotron subhead" id="overview">
+        <div class="container">
+            <h1>WinFlow Analytics</h1>
+            <p class="lead">{ Next generation trend indicator which precisely identifies market changes instantly }</p>
+        </div>
     </header>
     <div class="container">
-      <div class="hero-unit">
-        @helper.form(routes.Application.authenticate, 'class -> "form-horizontal") {
-          @if(form.hasGlobalErrors) {
-            <p class="error">@form.globalError.message</p>
-          }
-          @if(flash.contains("success")) {
-            <p class="text-success">@flash.get("success")
-          }
-          <div class="control-group">
-            <label class="control-label" for="inputEmail">Email</label>
-            <div class="controls">
-              <input type="text" id="inputEmail" name="email" value="@form("email").value" placeholder="Email">
+        <div class="hero-unit">
+            <div class="row">
+                @helper.form(routes.Application.authenticate, 'class -> "form-horizontal") {
+                    @if(form.hasGlobalErrors) {
+                        <p class="error">@form.globalError.message</p>
+                    }
+                    @if(flash.contains("success")) {
+                        <p class="text-success">@flash.get("success")
+                    }
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Email</label>
+                        <div class="controls">
+                            <input type="text" id="inputEmail" name="email" value="@form("email").value" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">Password</label>
+                        <div class="controls">
+                            <input type="password" name="password" id="inputPassword" placeholder="Password">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn btn-primary">Sign in</button>
+                        </div>
+                    </div>
+                }
             </div>
-          </div>
-          <div class="control-group">
-            <label class="control-label" for="inputPassword">Password</label>
-            <div class="controls">
-              <input type="password" name="password" id="inputPassword" placeholder="Password">
-            </div>
-          </div>
-          <div class="control-group">
-            <div class="controls">
-              <button type="submit" class="btn btn-primary">Sign in</button>
-            </div>
-          </div>
-        }
-      </div>
+        </div>
     </div>
     <footer class="footer">
-      <div class="container">
-        <p class="pull-right"><a href="https://twitter.com/WinflowFG">@@WinflowFG</a></p>
-        <p>&copy; Winflow Financial Group Corporation</p>
+        <div class="container">
+            <p class="pull-right"><a href="https://twitter.com/WinflowFG">@@WinflowFG</a></p>
+            <p>&copy; Winflow Financial Group Corporation</p>
       </div>
     </footer>
     <!-- For faster page loads -->
