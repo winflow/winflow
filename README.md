@@ -24,7 +24,7 @@ Go into the project root folder and execute ```play``` command. The play console
 
 ## Running the Application
 To run the application go into the project root directory and execute ```play``` command. The play console will appear.
-Now execute the ```run``` command. This will run your application on a default port 9000.
+Now execute the ```run``` command. This will run your application on a default port ```9000```.
 
 Running the application can also be done in one step by executing ```play run``` together.
 
