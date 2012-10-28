@@ -1,0 +1,29 @@
+@(alerts: List[Alert], alertForm: Form[Alert])
+
+<!-- 	Importing Helper gives us the form creation helpers,
+			typically the form function that creates the HTML
+			<form> with filled action and method attributes -->
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("WinFlow Analytics") {
+    <div class="row-fluid">
+        <div class="span2">
+            <ul class="nav nav-tabs nav-stacked">
+                <li class="nav-header">Alert Rules</li>
+                <li class="active"><a href="#">Show Rules</a></li>
+                <li><a href="#">Create Rule</a></li>
+            </ul>
+        </div>
+        <div class="span10">
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+            </ul>
+            <div class="container-fluid">
+                <section id="global">
+                    <legend>Dashboard <small>Monitor every activity</small></legend>
+                </section>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,20 @@
+
+# Users
+
+users:
+
+    - !!models.User
+        email:      jsingh@gmail.com
+        name:       Jatinder Singh
+        password:   secret
+    
+    - !!models.User
+        email:      meghraj@gmail.com
+        name:       Meghraj Bilwani
+        password:   secret
+    
+    - !!models.User
+        email:      howard@gmail.com
+        name:       Howard Weinerman
+        password:   secret
+    
