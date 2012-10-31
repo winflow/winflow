@@ -5,16 +5,19 @@ users:
 
     - !!models.User
         email:      jsingh@gmail.com
-        name:       Jatinder Singh
+        firstName:  Jatinder
+        lastName:   Singh
         password:   secret
     
     - !!models.User
         email:      meghraj@gmail.com
-        name:       Meghraj Bilwani
+        firstName:  Meghraj
+        lastName:   Bilwani
         password:   secret
     
     - !!models.User
         email:      howard@gmail.com
-        name:       Howard Weinerman
+        firstName:  Howard
+        lastName:   Weinerman
         password:   secret
     

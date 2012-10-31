@@ -19,9 +19,36 @@
           body {
             color: #fff;
           }
-          .hero-unit {
+          .form-signin {
             color: #5a8193;
+            max-width: 300px;
+            padding: 19px 29px 29px;
+            margin: 0 auto 20px;
             background-color: #2b363e;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            -moz-box-shadow: 0 1px 2px rgba(0,0,0,.05);
+            box-shadow: 0 1px 2px rgba(0,0,0,.05);
+          }
+          .form-signin .form-signin-heading,
+          .form-signin .checkbox {
+            margin-bottom: 10px;
+          }
+          .form-signin input[type="text"],
+          .form-signin input[type="password"] {
+            font-size: 16px;
+            height: auto;
+            margin-bottom: 15px;
+            padding: 7px 9px;
+          }
+          .container {
+            width: auto;
+            max-width: 780px;
+          }
+          .container .credit {
+            margin: 20px 0;
           }
       </style>
   </head>
@@ -33,35 +60,18 @@
         </div>
     </header>
     <div class="container">
-        <div class="hero-unit">
-            <div class="row">
-                @helper.form(routes.Application.authenticate, 'class -> "form-horizontal") {
-                    @if(form.hasGlobalErrors) {
-                        <p class="error">@form.globalError.message</p>
-                    }
-                    @if(flash.contains("success")) {
-                        <p class="text-success">@flash.get("success")
-                    }
-                    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Email</label>
-                        <div class="controls">
-                            <input type="text" id="inputEmail" name="email" value="@form("email").value" placeholder="Email">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <label class="control-label" for="inputPassword">Password</label>
-                        <div class="controls">
-                            <input type="password" name="password" id="inputPassword" placeholder="Password">
-                        </div>
-                    </div>
-                    <div class="control-group">
-                        <div class="controls">
-                            <button type="submit" class="btn btn-primary">Sign in</button>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
+        @helper.form(routes.Application.authenticate, 'class -> "form-signin") {
+            @if(form.hasGlobalErrors) {
+                <p class="error">@form.globalError.message</p>
+            }
+            @if(flash.contains("success")) {
+                <p class="text-success">@flash.get("success")
+            }
+            <h3 class="form-signin-heading">Sign in</h3>
+            <input type="text" class="input-block-level" placeholder="Email address" id="inputEmail" name="email" value="@form(" email").value" placeholder="Email">
+            <input type="password" class="input-block-level" name="password" id="inputPassword" placeholder="Password">
+            <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        }
     </div>
     <footer class="footer">
         <div class="container">

@@ -7,10 +7,9 @@ import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
 
-import com.avaje.ebean.*;
-
 /**
- *	User entity managed by ebean
+ * Saves user information and provides a way to authenticate
+ * user into the system
  */
 @Entity
 @Table(name="account")
@@ -22,7 +21,10 @@ public class User extends Model {
 	public String email;
 
 	@Constraints.Required
-	public String name;
+	public String firstName;
+
+    @Constraints.Required
+    public String lastName;
 
 	@Constraints.Required
 	public String password;
@@ -52,8 +54,8 @@ public class User extends Model {
 	 */
 	public static User authenticate(String email, String password) {
 		return find.where()
-						.eq("email", email)
-						.eq("password", password)
-						.findUnique();
+                    .eq("email", email)
+                    .eq("password", password)
+                    .findUnique();
 	}
 }

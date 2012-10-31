@@ -1,17 +1,19 @@
 # Routes - Defines all application routes (Higher priority routes first)
 
 # Home page
-GET     /                           				controllers.Alerts.index()
+GET     /                           				controllers.Dashboard.index()
+
+# Dashboard
+GET     /dashboard                                  controllers.Dashboard.index()
+
+# Portfolio
+GET     /index                                      controllers.Portfolios.index()
+GET     /create                                     controllers.Portfolios.create()
 
 # Authentication
 GET     /login                                      controllers.Application.login()
 POST    /login                                      controllers.Application.authenticate()
 GET     /logout                                     controllers.Application.logout()
-
-# Alerts
-GET     /alerts                      				controllers.Alerts.alerts()
-POST    /alerts                      				controllers.Alerts.newAlert()
-POST    /alerts/:id/delete           				controllers.Alerts.deleteAlert(id: Long)
 
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               				controllers.Assets.at(path="/public", file)

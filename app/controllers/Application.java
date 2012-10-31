@@ -1,6 +1,9 @@
+/**
+ * Copyright 2012 Winflow Financial Group Corporation.
+ *      http://www.winflowfinancial.com
+ */
 package controllers;
 
-import play.*;
 import play.mvc.*;
 import play.data.*;
 
@@ -41,7 +44,7 @@ public class Application extends Controller {
       return badRequest(login.render(loginForm));
     } else {
       session("email", loginForm.get().email);
-      return redirect(routes.Alerts.alerts());
+      return redirect(routes.Dashboard.index());
     }    
   }
 

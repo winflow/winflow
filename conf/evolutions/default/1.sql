@@ -11,7 +11,8 @@ create table alert (
 
 create table account (
   email                     varchar(255) not null,
-  name                      varchar(255),
+  first_name                varchar(255),
+  last_name                 varchar(255),
   password                  varchar(255),
   constraint pk_account primary key (email))
 ;

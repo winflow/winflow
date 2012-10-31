@@ -1,10 +1,11 @@
+/**
+ * Copyright 2012 Winflow Financial Group Corporation.
+ *      http://www.winflowfinancial.com
+ */
 package controllers;
 
-import play.*;
 import play.mvc.*;
 import play.mvc.Http.*;
-
-import models.*;
 
 /**
  * 	Handles authentication

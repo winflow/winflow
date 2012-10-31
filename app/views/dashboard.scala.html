@@ -1,0 +1,24 @@
+@(message: String)
+
+<!-- 	Importing Helper gives us the form creation helpers,
+			typically the form function that creates the HTML
+			<form> with filled action and method attributes -->
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("WinFlow Analytics Dashboard") {
+<div class="row-fluid">
+    <div class="span12">
+        <ul class="breadcrumb">
+            <li><a href="#">Dashboard</a></li>
+        </ul>
+        <div class="container-fluid">
+            <section id="global">
+                <legend>Dashboard
+                    <small>Monitor every activity</small>
+                </legend>
+            </section>
+        </div>
+    </div>
+</div>
+}
