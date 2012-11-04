@@ -44,7 +44,7 @@ public class Portfolios extends Controller {
             ActiveTrade.create(activeTrades.getFile(), brokerage);
             return redirect(routes.Portfolios.show());
         } else {
-            return ok("File NOT available");
+            return redirect(routes.Portfolios.index());
         }
     }
 }
