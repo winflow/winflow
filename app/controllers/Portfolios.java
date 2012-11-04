@@ -4,13 +4,17 @@
  */
 package controllers;
 
+import models.ActiveTrade;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
 import play.mvc.Security;
-import views.html.dashboard;
+import views.html.portfolios.show;
+import views.html.portfolios.index;
 
-import java.io.File;
+import java.util.List;
+
+import static play.mvc.Http.MultipartFormData.FilePart;
 
 /**
  * @author Jatinder Singh on 2012-10-31 at 5:46 PM
@@ -19,27 +23,28 @@ import java.io.File;
 public class Portfolios extends Controller {
 
     public static Result index() {
-        return ok(dashboard.render("I'm Index"));
+        return ok(index.render());
+    }
+
+    public static Result show() {
+        return ok(show.render(ActiveTrade.findAll()));
     }
 
     /**
-     * Creates a portfolio by downloading the provided broker
-     * file and broker name information
+     * Uploads active trades from a CSV file
      *
      * @return
      */
-    public static Result create() {
+    public static Result upload() {
         Http.MultipartFormData body = request().body().asMultipartFormData();
-        Http.MultipartFormData.FilePart picture = body.getFile("picture");
+        FilePart activeTrades = body.getFile("activeTrades");
+        String brokerage = request().body().asMultipartFormData().asFormUrlEncoded().get("brokerage")[0];
 
-        if (picture != null) {
-            String fileName = picture.getFilename();
-            String contentType = picture.getContentType();
-            File file = picture.getFile();
-            return ok("File uploaded");
+        if(activeTrades != null) {
+            ActiveTrade.create(activeTrades.getFile(), brokerage);
+            return redirect(routes.Portfolios.show());
         } else {
-            flash("error", "Missing file");
-            return redirect(routes.Dashboard.index());
+            return ok("File NOT available");
         }
     }
 }

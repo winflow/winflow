@@ -2,6 +2,7 @@ package models;
 
 import java.util.*;
 
+import org.joda.time.DateTime;
 import play.db.ebean.*;
 import play.data.validation.Constraints.*;
 
@@ -16,7 +17,10 @@ public class Alert extends Model {
 	@Required
 	public String label;
 
-	/**
+    public DateTime createdOn;
+
+
+    /**
 	 *	Creating find helper to initiate queries
 	 */
 	public static Finder<Long, Alert> find = new Finder(Long.class, Alert.class);

@@ -3,6 +3,7 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 
+import org.joda.time.DateTime;
 import play.db.ebean.*;
 import play.data.format.*;
 import play.data.validation.*;
@@ -12,7 +13,7 @@ import play.data.validation.*;
  * user into the system
  */
 @Entity
-@Table(name="account")
+@Table(name="ACCOUNT")
 public class User extends Model {
 
 	@Id
@@ -28,6 +29,10 @@ public class User extends Model {
 
 	@Constraints.Required
 	public String password;
+
+    public DateTime createdOn;
+
+    public DateTime updatedOn;
 
 	/**
 	 *	Finder for quering into database
@@ -47,7 +52,6 @@ public class User extends Model {
 	public static User findByEmail(String email) {
 		return find.where().eq("email", email).findUnique();
 	}
-
 
 	/**
 	 *	Authenticates a user using email and password

@@ -1,19 +1,20 @@
 # Routes - Defines all application routes (Higher priority routes first)
 
 # Home page
-GET     /                           				controllers.Dashboard.index()
+GET     /                           				    controllers.Dashboard.index()
 
 # Dashboard
-GET     /dashboard                                  controllers.Dashboard.index()
+GET     /dashboard                                      controllers.Dashboard.index()
 
 # Portfolio
-GET     /index                                      controllers.Portfolios.index()
-GET     /create                                     controllers.Portfolios.create()
+GET     /portfolios                                     controllers.Portfolios.index()
+POST    /portfolios/upload                              controllers.Portfolios.upload()
+GET     /portfolios/show                                controllers.Portfolios.show()
 
 # Authentication
-GET     /login                                      controllers.Application.login()
-POST    /login                                      controllers.Application.authenticate()
-GET     /logout                                     controllers.Application.logout()
+GET     /login                                          controllers.Application.login()
+POST    /login                                          controllers.Application.authenticate()
+GET     /logout                                         controllers.Application.logout()
 
 # Map static resources from the /public folder to the /assets URL path
-GET     /assets/*file               				controllers.Assets.at(path="/public", file)
+GET     /assets/*file               				    controllers.Assets.at(path="/public", file)

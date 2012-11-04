@@ -1,0 +1,39 @@
+@main("Upload Active Trades") {
+<div class="row-fluid">
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a> <span class="divider">/</span></li>
+        <li><a href="/portfolios">Portfolios</a></li>
+    </ul>
+    <div class="container-fluid">
+        <section id="global">
+            <legend>Portfolio
+                <small>Use the form to Upload Active Trades</small>
+                <small class="pull-right"><i class="icon-print"></i></small>
+            </legend>
+            @helper.form(routes.Portfolios.upload, 'enctype -> "multipart/form-data", 'class -> "form-horizontal") {
+                <div class="control-group">
+                    <label class="control-label">Brokerage</label>
+                    <div class="controls">
+                        <select name="brokerage">
+                            <option>Please select broker</option>
+                            <option>IB</option>
+                            <option>FIDELITY</option>
+                            <option>MIRRILL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <input type="file" name="activeTrades" id="activeTrades"/>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div class="controls">
+                        <button type="submit" class="btn btn-primary">Upload Active Trades</button>
+                    </div>
+                </div>
+            }
+        </section>
+    </div>
+</div>
+}
