@@ -13,3 +13,4 @@ dist
 /.classpath
 /.project
 /RUNNING_PID
+conf/evolutions
