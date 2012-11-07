@@ -1,4 +1,3 @@
-
 # Users
 
 users:
@@ -10,14 +9,36 @@ users:
         password:   secret
     
     - !!models.User
-        email:      meghraj@gmail.com
-        firstName:  Meghraj
-        lastName:   Bilwani
-        password:   secret
-    
-    - !!models.User
         email:      howard@gmail.com
         firstName:  Howard
         lastName:   Weinerman
         password:   secret
     
+
+# ActiveTrade
+
+activeTrades:
+
+    - !!models.ActiveTrade
+        strike:             52.5
+        right:              P
+        localSymbol:        DD
+        securityType:       OPT
+        position:           -10
+        multiplier:         100
+        exchange:           SMART
+        primaryExchange:    AMEX
+        currency:           USD
+        originalPrice:      49.5
+
+    - !!models.ActiveTrade
+        strike:             52.5
+        right:              P
+        localSymbol:        DD
+        securityType:       OPT
+        position:           -10
+        multiplier:         100
+        exchange:           SMART
+        primaryExchange:    AMEX
+        currency:           USD
+        originalPrice:      49.5

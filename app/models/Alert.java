@@ -9,16 +9,12 @@ import play.data.validation.Constraints.*;
 import javax.persistence.*;
 
 @Entity
-public class Alert extends Model {
-	
-	@Id
-	public Long id;
+public class Alert extends TimeStampable {
 
 	@Required
 	public String label;
 
     public DateTime createdOn;
-
 
     /**
 	 *	Creating find helper to initiate queries

@@ -6,11 +6,6 @@ package models;
 
 import org.joda.time.DateTime;
 import org.junit.*;
-
-import play.mvc.*;
-import play.test.*;
-import play.libs.F.*;
-
 import java.util.List;
 
 import static play.test.Helpers.*;
@@ -21,51 +16,13 @@ import static org.fest.assertions.Assertions.*;
  */
 public class ActiveTradeTest {
 
-    @Test
-    public void findByExpiryDate() {
-        running(fakeApplication(inMemoryDatabase()), new Runnable() {
-            @Override
-            public void run() {
-                List<ActiveTrade> activeTrade = ActiveTrade.findByExpiryDate(new DateTime());
-
-                assertThat(activeTrade).isNotNull();
-                assertThat(activeTrade.size()).isGreaterThan(0);
-            }
-        });
-    }
-
-    @Test
-    public void findByExpiryDateGTE() {
-        running(fakeApplication(inMemoryDatabase()), new Runnable() {
-            @Override
-            public void run() {
-                List<ActiveTrade> activeTrade = ActiveTrade.findByExpiryDateGTE(new DateTime());
-
-                assertThat(activeTrade).isNotNull();
-                assertThat(activeTrade.size()).isGreaterThan(0);
-            }
-        });
-    }
-
-    @Test
-    public void findByExpiryDateLTE() {
-        running(fakeApplication(inMemoryDatabase()), new Runnable() {
-            @Override
-            public void run() {
-                List<ActiveTrade> activeTrade = ActiveTrade.findByExpiryDateLTE(new DateTime());
-
-                assertThat(activeTrade).isNotNull();
-                assertThat(activeTrade.size()).isGreaterThan(0);
-            }
-        });
-    }
 
     @Test
     public void findByLocalSymbol() {
         running(fakeApplication(inMemoryDatabase()), new Runnable() {
             @Override
             public void run() {
-                List<ActiveTrade> activeTrade = ActiveTrade.findByLocalSymbol("RIMM");
+                List<ActiveTrade> activeTrade = ActiveTrade.findByLocalSymbol("DD");
 
                 assertThat(activeTrade).isNotNull();
                 assertThat(activeTrade.size()).isGreaterThan(0);
@@ -78,7 +35,21 @@ public class ActiveTradeTest {
         running(fakeApplication(inMemoryDatabase()), new Runnable() {
             @Override
             public void run() {
-                List<ActiveTrade> activeTrade = ActiveTrade.findBySecurityType("Option");
+                List<ActiveTrade> activeTrade = ActiveTrade.findBySecurityType("OPT");
+
+                assertThat(activeTrade).isNotNull();
+                assertThat(activeTrade.size()).isGreaterThan(0);
+            }
+        });
+    }
+
+    public void findByExpiryDate() {
+        running(fakeApplication(inMemoryDatabase()), new Runnable() {
+            @Override
+            public void run() {
+                DateTime maDate = new DateTime("2001-09-09T01:46:40Z");
+
+                List<ActiveTrade> activeTrade = ActiveTrade.findByExpiryDate(new DateTime());
 
                 assertThat(activeTrade).isNotNull();
                 assertThat(activeTrade.size()).isGreaterThan(0);

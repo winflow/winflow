@@ -17,6 +17,8 @@ public class Global extends GlobalSettings {
 			if(Ebean.find(User.class).findRowCount() == 0) {
 				Map<String,List<Object>> all = (Map<String,List<Object>>)Yaml.load("initial-data.yml");
 				Ebean.save(all.get("users"));
+//                Ebean.save(all.get("activeTrades"));
+                Ebean.save(all.get("tradeProperties"));
 			}
 		}
 	}

@@ -1,5 +1,8 @@
 # Routes - Defines all application routes (Higher priority routes first)
 
+# Admin Feature
+GET     /admin                                          controllers.Admin.index()
+
 # Home page
 GET     /                           				    controllers.Dashboard.index()
 

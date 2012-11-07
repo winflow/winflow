@@ -10,9 +10,7 @@ import com.avaje.ebean.Transaction;
 import com.avaje.ebean.text.csv.CsvReader;
 import org.joda.time.DateTime;
 import parsers.Brokerage;
-import parsers.FidelityCsvParser;
 import play.Logger;
-import play.data.format.Formats;
 import play.data.validation.Constraints;
 import play.db.ebean.Model;
 import play.db.ebean.Transactional;
@@ -22,19 +20,13 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.List;
-import static play.mvc.Http.MultipartFormData.FilePart;
 
 /**
  * @author Jatinder Singh on 2012-11-01 at 8:04 PM
  */
 @Entity
 @Table(name = "ACTIVE_TRADE")
-public class ActiveTrade extends Timestampable {
-
-    @Id
-    @Constraints.Required
-    @Formats.NonEmpty
-    public Long id;
+public class ActiveTrade extends TimeStampable {
 
     @Column(name = "OPTION_STRIKE")
     public double strike;
@@ -81,7 +73,7 @@ public class ActiveTrade extends Timestampable {
             transaction.setBatchSize(5);
 
             try {
-                csvReader.process(fileReader, new FidelityCsvParser<ActiveTrade>());
+                csvReader.process(fileReader, Brokerage.getParser(brokerage));
                 transaction.commit();
             } finally {
                 transaction.end();
@@ -149,7 +141,7 @@ public class ActiveTrade extends Timestampable {
      */
     public static List<ActiveTrade> findByLocalSymbol(String localSymbol) {
         return find.where()
-                .le("localSymbol", localSymbol)
+                .eq("localSymbol", localSymbol)
                 .findList();
     }
 

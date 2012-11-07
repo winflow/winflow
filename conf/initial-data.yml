@@ -1,8 +1,6 @@
-
 # Users
 
 users:
-
     - !!models.User
         email:      jsingh@gmail.com
         firstName:  Jatinder
@@ -10,14 +8,178 @@ users:
         password:   secret
     
     - !!models.User
-        email:      meghraj@gmail.com
-        firstName:  Meghraj
-        lastName:   Bilwani
-        password:   secret
-    
-    - !!models.User
         email:      howard@gmail.com
         firstName:  Howard
         lastName:   Weinerman
         password:   secret
-    
+
+# Trade Properties
+
+tradeProperties:
+    - !!models.TradeProperty
+        name:           securityType
+        brokerageType:  IB
+        rank:           1
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           localSymbol
+        brokerageType:  IB
+        rank:           2
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           expiry
+        brokerageType:  IB
+        rank:           3
+        ignore:         false
+        isDate:         true
+
+    - !!models.TradeProperty
+        name:           strike
+        brokerageType:  IB
+        rank:           4
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           right
+        brokerageType:  IB
+        rank:           5
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           position
+        brokerageType:  IB
+        rank:           6
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           multiplier
+        brokerageType:  IB
+        rank:           7
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           exchange
+        brokerageType:  IB
+        rank:           8
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           currency
+        brokerageType:  IB
+        rank:           9
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           primaryExchange
+        brokerageType:  IB
+        rank:           10
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           transactionDate
+        brokerageType:  IB
+        rank:           11
+        ignore:         false
+        isDate:         true
+
+    - !!models.TradeProperty
+        name:           originalPrice
+        brokerageType:  IB
+        rank:           12
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           securityType
+        brokerageType:  FIDELITY
+        rank:           2
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           localSymbol
+        brokerageType:  FIDELITY
+        rank:           1
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           expiry
+        brokerageType:  FIDELITY
+        rank:           3
+        ignore:         false
+        isDate:         true
+
+    - !!models.TradeProperty
+        name:           strike
+        brokerageType:  FIDELITY
+        rank:           4
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           right
+        brokerageType:  FIDELITY
+        rank:           5
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           position
+        brokerageType:  FIDELITY
+        rank:           6
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           multiplier
+        brokerageType:  FIDELITY
+        rank:           7
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           exchange
+        brokerageType:  FIDELITY
+        rank:           8
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           currency
+        brokerageType:  FIDELITY
+        rank:           10
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           primaryExchange
+        brokerageType:  FIDELITY
+        rank:           9
+        ignore:         false
+        isDate:         false
+
+    - !!models.TradeProperty
+        name:           transactionDate
+        brokerageType:  FIDELITY
+        rank:           11
+        ignore:         false
+        isDate:         true
+
+    - !!models.TradeProperty
+        name:           originalPrice
+        brokerageType:  FIDELITY
+        rank:           12
+        ignore:         false
+        isDate:         false
