@@ -13,8 +13,8 @@ import play.mvc.Http.*;
 public class Secured extends Security.Authenticator {
 
 	/**
-	 *	Retrieves the username from the HTTP context; the default is to
-	 *	read from the session cookie. Null if the user is not authenticated.
+	 * Retrieves the username from the HTTP context; the default is to read
+     * from the session cookie. Null if the user is not authenticated.
 	 */
 	@Override
 	public String getUsername(Context ctx) {
@@ -22,8 +22,8 @@ public class Secured extends Security.Authenticator {
 	}
 
 	/**
-	 *	Generates an alternative result if the user is not authenticated; 
-	 *	the default a simple '401 Not Authorized' page.
+	 * Generates an alternative result if the user is not authenticated;
+     * the default a simple '401 Not Authorized' page.
 	 */
 	@Override
 	public Result onUnauthorized(Context ctx) {
