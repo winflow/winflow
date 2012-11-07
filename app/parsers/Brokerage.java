@@ -18,7 +18,7 @@ import java.util.List;
 public class Brokerage {
 
     /**
-     * Adds broker fields to save into db
+     * Reads broker fields from db that will be fed to the database
      *
      * @param csvReader
      * @param brokerage
